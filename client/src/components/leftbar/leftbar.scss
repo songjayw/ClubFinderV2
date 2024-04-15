@@ -1,0 +1,86 @@
+.leftbar{
+    flex: 2;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 60px);
+    overflow: scroll;
+
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    .container{
+        padding: 20px;
+
+    hr{
+        margin:20px 0px;
+        border: none;
+        height: 0.5px;
+        background-color: lightgrey;
+    }
+        .menu{
+
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .user{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                
+                img {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+                span {
+                    font-size: 16px;
+                }
+            }
+
+            .item{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+             
+                span{
+                    font-size: 16px;
+                }
+            }
+
+            .itemWButton{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+             
+                span{
+                    font-size: 16px;
+                }
+            }
+
+            .itemWButton button {
+                /* Add your button styles here */
+                background-color: #000000; /* Example background color */
+                color: #ffffff; /* Example text color */
+                border: none; /* Example border */
+                padding: 8px 16px; /* Example padding */
+                border-radius: 0px; /* Example border radius */
+                cursor: pointer; /* Example cursor */
+                width: 150px; /* Set a fixed width */
+                height: 35px; /* Set a fixed height */
+                font-family: arial;
+            }
+
+            .itemWButton button:hover {
+                /* Add your hover styles here */
+                background-color: #c0c0c0; /* Example hover background color */
+                box-shadow: 0px 0px 45px -10px rgba(0, 0, 0, 0.38);
+                color: black;
+                font-weight: 6px;
+            }
+        }
+    }
+
+}
