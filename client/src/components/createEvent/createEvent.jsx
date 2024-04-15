@@ -1,4 +1,8 @@
 import React, { useContext, useState, useEffect } from 'react';
+
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css"; 
+
 import axios from "axios";
 import { AuthContext } from "../../context/authContext";
 import { Link, useNavigate } from "react-router-dom";
@@ -12,6 +16,7 @@ const CreateEvent = () => {
         club_id:"",
         event_name:"",
         max_attendee:"",
+        event_date: new Date(),
         location:"",
         img:"",
     });
@@ -42,6 +47,10 @@ const CreateEvent = () => {
 
     const handleChange = (e) => {
         setInputs(prev => ({...prev, [e.target.name]: e.target.value})) 
+    };
+
+    const handleDateChange = (date) => {
+        setInputs(inputs => ({ ...inputs, event_date: date }));
     };
 
     const handleDiscard = () => {
@@ -83,6 +92,8 @@ const CreateEvent = () => {
         }
     };
 
+    console.log(inputs);
+    
     const navigate = useNavigate();
 
     return (
@@ -112,7 +123,21 @@ const CreateEvent = () => {
                                 placeholder="Event Name"
                                 onChange={handleChange}
                             />
-                        
+                            <input 
+                                type="number" 
+                                name="max_attendee" 
+                                placeholder="Max Attendees" 
+                                onChange={handleChange} 
+                                min="1"
+                                max="90"
+                            />
+                            <DatePicker
+                                selected={inputs.event_date}
+                                onChange={handleDateChange}
+                                name="event_date"
+                                dateFormat="MMMM d, yyyy h:mm aa"
+                                showTimeSelect
+                            />
                             <input
                                 type="text"
                                 name="location"

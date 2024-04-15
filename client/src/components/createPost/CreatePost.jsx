@@ -9,7 +9,7 @@ import { makeRequest } from '../../axios';
 const CreatePost = () => {
 
     const [inputs, setInputs] = useState({
-        club:"",
+        club_id:"",
         title:"",
         content:"",
         img:"",

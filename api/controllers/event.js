@@ -3,7 +3,7 @@ import {db} from "../db.js";
 import jwt from "jsonwebtoken"
 import moment from "moment"
 
-export const getAllEvents = (req, res) => {
+export const getMyEvents = (req, res) => {
     const token = req.cookies.accessToken;
     const clubId = req.params.clubId; 
     if (!token) return res.status(401).json("User not logged in");
@@ -85,16 +85,17 @@ export const createEvent = (req, res) => {
     jwt.verify(token, "secretkey", (err, userInfo) => {
         if (err) return res.status(403).json("Token is not valid");
         const q = 
-            "INSERT INTO events (`name`, `location`, `created_time`, `max_attendees`, `host`, `event_image`, `club_id`) VALUES (?)";
+            "INSERT INTO events (`name`, `location`, `created_time`, `max_attendees`, `host`, `event_image`, `club_id`, `time`) VALUES (?)";
 
         const values = [
             req.body.event_name,
             req.body.location,
             moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
-            30, // Replace with req.body.max_attendees
+            req.body.max_attendee,
             userInfo.id,
             req.body.img,
-            req.body.club_id
+            req.body.club_id,
+            moment(req.body.event_date).format("YYYY-MM-DD HH:mm:ss")
         ]
         
         db.query(q, [values], (err,data) => {

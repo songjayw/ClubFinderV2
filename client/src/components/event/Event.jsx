@@ -24,7 +24,7 @@ const Event = ({ event }) => {
                 
                 <div className="info">
                     <div className="info-item">
-                        <span><FaceIcon/> Attendance Count: {event.attendance_count} </span>
+                        <span><FaceIcon/> Attendance Count: {event.attendees} </span>
                     </div>
                     <div className="info-item">
                         <span> <LocationOnIcon/> Location: {event.location} </span>

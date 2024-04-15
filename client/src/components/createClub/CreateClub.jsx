@@ -131,6 +131,9 @@ const CreateClub = () => {
                             onChange={(e) => setFile(e.target.files[0])}
                             className="choose-image"
                         />
+                        
+                        
+                        <label htmlFor="image" className="custom-button">Choose Club Image</label>
 
                         <div className="buttons-club">
                           <span> <button className="post" type="submit" onClick={handleClick}> Create Club </button></span>
