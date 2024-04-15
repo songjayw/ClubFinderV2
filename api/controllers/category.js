@@ -4,11 +4,11 @@ import jwt from "jsonwebtoken"
 import moment from "moment"
 
 export const getCategories = (req, res) => {
-    const q = "SELECT id, name FROM categories"; 
+    const q = "SELECT id, name, category_img AS image FROM categories"; 
 
     db.query(q, (err, data) => {
         if (err) return res.status(500).json(err);
         if (data.length === 0) return res.status(404).json("No categories found");
-        return res.json(data.map(({ id, name }) => ({ id, name })));
+        return res.json(data.map(({ id, name, image }) => ({ id, name, image})));
     });
 };
