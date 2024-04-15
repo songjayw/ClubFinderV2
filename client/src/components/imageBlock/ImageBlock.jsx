@@ -1,12 +1,10 @@
 import React from 'react';
 import './imageBlock.scss';
 
-const ImageGallery = ({ images }) => {
+const ImageGallery = ({ imageBlock }) => {
     return (
-        <div className="image-gallery">
-            {images.map((image, index) => (
-                <img key={index} src={image} alt={`Image ${index + 1}`} />
-            ))}
+        <div className="image-blocks">
+            <img  src={imageBlock.image} alt=""/>
         </div>
     );
 }

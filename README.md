@@ -7,10 +7,8 @@ Currently implemented front end partially bootstrapped with npx
 move to client directory
 
 $cd client
-
 $npm install *will install modules and packages needed for web app
-
-$yarn start *will start the web app
+$npm start *will start the web app
 
 ## Currently Implemented Pages
 
@@ -22,7 +20,6 @@ $yarn start *will start the web app
 Starting Backend Server
 
 $cd api
-
 $npm install
-
+$ npm add nodemon 
 $npm start

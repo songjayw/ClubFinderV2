@@ -36,6 +36,9 @@
                 font-family: Verdana, Geneva, Tahoma, sans-serif;
                 font-weight: bold;
 
+                .edit-button{
+                    margin-right:90px;
+                }
                 .c1 {
                     font-size: 50px;
                     font-family: Arial black;
@@ -58,9 +61,38 @@
                 color: rgb(255, 255, 255);
                 z-index: 1;
             }
+
+
+            
         }
 
         .components {
+           
+            
+
+            .edit{ 
+                width:100%;
+                .edit-button{
+                    margin-top:15px;
+                    margin-left: 860px;
+                    background-color:#963737;
+                    color:white;
+                    font-family:Verdana, Geneva, Tahoma, sans-serif; 
+                    width:100px;
+                    height:35px;
+                    border-radius:2px;
+                    border:none;
+                    cursor:pointer;
+                    transition:background-color 0.3s ease;
+
+                    &:hover{
+                        background-color: #993939; /* Change color on hover */
+
+                    }
+                }
+            }
+            
+
             .outer-buttons {
                 .buttons-clubProfile {
                     border-bottom: 8px solid #2e7154;
