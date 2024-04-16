@@ -2,7 +2,7 @@ import Category from "../category/Category";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 
-const Explore = () => {
+const Categories = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
@@ -27,4 +27,4 @@ const Explore = () => {
     );
 };
 
-export default Explore;
+export default Categories;

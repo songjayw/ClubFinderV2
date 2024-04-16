@@ -1,5 +1,5 @@
 .category {
-    box-shadow: 0px 0px 45px -10px rgba(0, 0, 0, 0.38);
+    
     margin: 30px;
     width: calc(50.0% - 60px); /* Adjust width for three items in a row */
     height: 250px;
@@ -9,15 +9,18 @@
     /* Ensure positioning context for absolute positioning */
 
     .image-button {
+       
         cursor: pointer;
         background-color: rgb(255, 255, 255);
         border: none;
         overflow: hidden;
         width: 100%;
         height: 100%;
+        object-fit: cover;
         /* Ensure text stays within button bounds */
 
         img {
+            border-radius: 10px;
             width: 100%; /* Take full width of parent container */
             height: 100%; /* Take full height of parent container */
             object-fit: cover;
@@ -25,6 +28,7 @@
         }
 
         .category-name {
+            
             font-family: 'Arial Black', sans-serif;
             /* Use a thicker font */
             font-size: 35px;
