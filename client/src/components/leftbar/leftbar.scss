@@ -1,86 +1,96 @@
-.leftbar{
+.leftbar {
     flex: 2;
     position: sticky;
-    top: 70px;
-    height: calc(100vh - 60px);
+    top: 50px;
+
+    height: calc(100vh - 50px);
     overflow: scroll;
 
-    &::-webkit-scrollbar{
+    
+
+    &::-webkit-scrollbar {
         display: none;
     }
-    .container{
+
+    .container {
         padding: 20px;
+        background-color:rgb(213, 219, 216);;
 
-    hr{
-        margin:20px 0px;
-        border: none;
-        height: 0.5px;
-        background-color: lightgrey;
-    }
-        .menu{
+        hr {
+            margin: 20px 0px;
+            border: none;
+            height: 1px;
+            background-color: rgb(58, 58, 58);
+        }
 
+        .menu {
             display: flex;
             flex-direction: column;
             gap: 20px;
 
-            .user{
+            .user {
                 display: flex;
                 align-items: center;
-                gap: 10px;
-                
+                gap: 25px;
+
                 img {
                     width: 30px;
                     height: 30px;
                     border-radius: 50%;
                     object-fit: cover;
+                  
                 }
 
+                .userName {
+                
+                    font-size: 15px;
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                    font-weight: bold;
+
+                    .link-name{
+                        color:black; 
+                    }
+                }
+            }
+
+            .item {
+
+                text-decoration: none; /* Remove underline */
+                color: inherit; /* Inherit text color */
+            
+                display: flex;
+                align-items: center;
+                gap: 30px;
+                cursor: pointer; /* Add cursor pointer */
+                padding: 6px; /* Add padding to create button-like appearance */
+                transition: background-color 0.3s ease; /* Add transition effect */
+
+                border-color:black;
+                border-bottom: 2px;
                 span {
-                    font-size: 16px;
+                    font-size: 15px;
+                    font-family: Verdana, Geneva, Tahoma, sans-serif;
+                    color: rgb(0, 0, 0);
+               
+                }
+
+                svg {
+                    font-size: 24px;
+                    color: black;
                 }
             }
 
-            .item{
-                display: flex;
-                align-items: center;
-                gap: 10px;
-             
+            .item:hover {
+                background-color: #414141;
+                border-radius: 5px;
                 span{
-                    font-size: 16px;
+                    color:white
                 }
-            }
 
-            .itemWButton{
-                display: flex;
-                align-items: center;
-                gap: 10px;
-             
-                span{
-                    font-size: 16px;
+                svg {
+                    color: rgb(255, 255, 255);
                 }
-            }
-
-            .itemWButton button {
-                /* Add your button styles here */
-                background-color: #000000; /* Example background color */
-                color: #ffffff; /* Example text color */
-                border: none; /* Example border */
-                padding: 8px 16px; /* Example padding */
-                border-radius: 0px; /* Example border radius */
-                cursor: pointer; /* Example cursor */
-                width: 150px; /* Set a fixed width */
-                height: 35px; /* Set a fixed height */
-                font-family: arial;
-            }
-
-            .itemWButton button:hover {
-                /* Add your hover styles here */
-                background-color: #c0c0c0; /* Example hover background color */
-                box-shadow: 0px 0px 45px -10px rgba(0, 0, 0, 0.38);
-                color: black;
-                font-weight: 6px;
             }
         }
     }
-
 }

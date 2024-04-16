@@ -15,6 +15,8 @@ import PostCreator from "./pages/postcreator/PostCreator";
 import EventCreator from "./pages/eventcreator/EventCreator";
 import ClubCreator from "./pages/clubcreator/ClubCreator";
 
+import CategoryClubs from "./pages/categoryClubs/CategoryClubs";
+
 import { useContext } from "react";
 import { AuthContext } from "./context/authContext";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
@@ -98,6 +100,19 @@ function App() {
           path:"/createClub",
           element:<ClubCreator/>
         },
+        {
+          path:"/categoryClubs",
+          element: <CategoryClubs/>
+        },
+        {
+          path:"/clubProfile",
+          element:<ClubProfile/>
+        }, 
+        {
+          path:"/profile",
+          element:<Profile/>
+
+        }
       ]
     },
     {

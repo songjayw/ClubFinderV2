@@ -1,15 +1,20 @@
 import { useContext } from "react";
 import { AuthContext } from "../../context/authContext";
 import "./leftbar.scss";
-import GroupsIcon from '@mui/icons-material/Groups';
-import HomeIcon from  '@mui/icons-material/Home';
-import CalendarMonthIcon from  '@mui/icons-material/CalendarMonth';
-import ExploreIcon from  '@mui/icons-material/Explore';
 import { Link } from 'react-router-dom';
+import { 
+    Home as HomeIcon,
+    CalendarToday as CalendarIcon,
+    Explore as ExploreIcon,
+    People as PeopleIcon,
+    AddCircle as AddCircleIcon
+} from '@mui/icons-material';
+
+import SensorDoorIcon from '@mui/icons-material/SensorDoor';
 
 const Leftbar = () => {
-
-    const { currentUser } = useContext(AuthContext)
+    const { currentUser } = useContext(AuthContext);
+    
     return (
         <div className="leftbar">
             <div className="container">
@@ -19,54 +24,47 @@ const Leftbar = () => {
                             src="https://images.pexels.com/photos/20339251/pexels-photo-20339251.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                             alt=""
                         />  
-                        <span> Jin Song </span>
-                    </div>
-                    <div className="itemWButton">
-                        <HomeIcon/>
-                        <Link to="/myClubs">
-                            <span> <button> My Clubs </button> </span>
-                        </Link>
-                        
-                    </div>
-                    <div className="itemWButton">
-                        <CalendarMonthIcon/>
-                        <Link to="/myEvents">
-                            <span> <button> My Events </button> </span>
-                        </Link>
-                       
-                    </div>
-                    <div className="itemWButton">
-                        <ExploreIcon/>
-                        <Link to="/explore">
-                            <span> <button> Explore </button> </span>
-                        </Link>
+                        <span className="userName"> <Link to="/profile" cclasssName="link-name"> Jin Song </Link> </span>
                     </div>
                     <hr/>
-                    <div className="itemWButton">
-                    <Link to="/createPost">
-                            <span> <button> Create Post </button> </span>
-                        </Link>
+                    
+                    <Link to="/" className="item">
+                        <SensorDoorIcon />
+                        <span> Home </span>
+                    </Link>
+                    <Link to="/explore" className="item">
+                        <ExploreIcon/>
+                        <span> Explore </span>
+                    </Link>
+                    <Link to="/myClubs" className="item" >
+                        <HomeIcon/>
+                        <span> My Clubs </span>
+                    </Link>
+                    <Link to="/myEvents" className="item">
+                        <CalendarIcon/>
+                        <span> My Events </span>
+                    </Link>
 
-                        
-                    </div>
-                    <div className="itemWButton">
-
-                        <Link to="/createEvent">
-                            <span> <button> Create Event </button> </span>
-                        </Link>
-                       
-                    </div>
-                    <div className="itemWButton">
-
-                        <Link to="/createClub">
-                            <span> <button> Create Club </button> </span>
-                        </Link>
-                       
-                    </div>
+                    
+            
+                    <hr/>
+                    
+                    <Link to="/createPost" className="item">
+                        <AddCircleIcon/>
+                        <span> Create Post </span>
+                    </Link>
+                    <Link to="/createEvent" className="item">
+                        <AddCircleIcon/>
+                        <span> Create Event </span>
+                    </Link>
+                    <Link to="/createClub" className="item">
+                        <AddCircleIcon/>
+                        <span> Create Club </span>
+                    </Link>
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Leftbar;

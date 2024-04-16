@@ -3,7 +3,7 @@ import axios from "axios";
 import { AuthContext } from "../../context/authContext";
 import React, { useContext, useState, useEffect } from 'react';
 
-const Clubs = () => {
+const Clubs = ( {category_id}) => {
     const [clubs, setClubs] = useState([]);
     const {currentUser} = useContext(AuthContext);
     const [ err, setError ] = useState(null);
@@ -14,7 +14,7 @@ const Clubs = () => {
                 .then(response => setClubs(response.data))
                 .catch(error => setError("Failed to fetch clubs"));
         }
-    }, [currentUser]);
+    }, [currentUser, category_id]);
 
     return (
         <div className="clubs">
