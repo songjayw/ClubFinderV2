@@ -90,15 +90,15 @@ function App() {
           path:"/createClub",
           element:<ClubCreator/>
         },
-        {
-          path:"/clubProfile",
-          element:<ClubProfile/>
-        }, 
-        {
-          path:"/profile",
-          element:<Profile/>
+        // {
+        //   path:"/clubProfile",
+        //   element:<ClubProfile/>
+        // }, 
+        // {
+        //   path:"/profile",
+        //   element:<Profile/>
 
-        }
+        // }
       ]
     },
     {

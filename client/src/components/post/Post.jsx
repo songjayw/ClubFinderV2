@@ -49,23 +49,32 @@ const Post = ({post}) => {
     return (
         <div className="post"> 
             <div className="container">
+
                 <div className="user">
                     <div className="userInfo">
-                        <img src={post.profilePic} alt=""/>
                         <div className="details">
-                            <Link to={`/profile/${post.username}`} style={{textdecoration:"none", color:"inherit"}}>
-                                <span className="name"> {post.name} </span>
-                            </Link>
-                            <span> posted on </span>
-                            <Link to={`/club/${post.club_id}`} style={{textdecoration:"none", color:"inherit"}}>
-                                <span className="clubName"> {post.club_name} </span>
-                            </Link>
+                            <img src={post.profilePic} alt=""/>
 
-                            <span className="date"> {moment(post.time_created).fromNow()} </span>
+                            
+                            <div className="header">
+                                <Link to={`/profile/${post.username}`} style={{textdecoration:"none", color:"inherit"}}> 
+                            {/* user id not username  */}
+                                <span className="name"> {post.name} </span>
+                                </Link>
+                                <span> posted on </span>
+                                <Link to={`/club/${post.club_id}`} style={{textdecoration:"none", color:"inherit"}}>
+                                <span className="clubName"> {post.club_name} </span>
+                                </Link>
+
+                            </div>
+
                         </div>
+                        <span className="date"> {moment(post.time_created).fromNow()} </span>
                     </div>
                     <MoreHorizIcon/>
                 </div>
+
+
                 <div className="title">
                     <p>{post.title}</p>
                 </div>
