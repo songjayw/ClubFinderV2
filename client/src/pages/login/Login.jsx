@@ -23,7 +23,7 @@ const Login = () => {
         e.preventDefault();
         try {
             await login(inputs);
-            navigate("/");
+            navigate("/Explore");
 
         } catch (err) {
             setErr(err.response.data);

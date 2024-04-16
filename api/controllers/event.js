@@ -20,6 +20,7 @@ export const getMyEvents = (req, res) => {
                 e.attendees,
                 e.host,
                 e.event_image,
+                e.time,
                 c.name AS club_name,
                 c.description AS club_description
             FROM 

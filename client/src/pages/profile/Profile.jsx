@@ -15,9 +15,7 @@ const Profile = () => {
     return (
         <div className="user-profile">
             <div className="inner-container-clubProfile">
-
                 <div className="user-Info">
-                    
                     <div className="images">
                         <img src="https://images.pexels.com/photos/13440765/pexels-photo-13440765.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" className="cover" />
                         <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" alt="" className="profilePic" />
@@ -42,22 +40,11 @@ const Profile = () => {
                     </div>
                     
                 </div>
-
-
                 <div className='seperate'></div>
-                
-
                 <div className="myClubsContainer">
                     <ProfileClubs/>
                 </div>
-
-
-            </div> 
-
-
-
-                
-              
+            </div>     
         </div>
 
 

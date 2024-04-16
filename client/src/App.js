@@ -67,6 +67,14 @@ function App() {
           element:<Home/>
         },
         {
+          path:"/profile/:username",
+          element:<Profile/>
+        },
+        {
+          path:"/clubProfile/:clubid",
+          element:<ClubProfile/>
+        },
+        {
           path: "/myClubs",
           element: <MyClubs/>
         },

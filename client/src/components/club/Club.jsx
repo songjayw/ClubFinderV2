@@ -23,7 +23,7 @@ const Club = ({ club }) => {
                 
                 <div className="info">
                         <span><FaceIcon/> Member Count: {club.member_count} </span>
-                        <Link to={"../club/"+club.id}>
+                        <Link to={"../clubProfile/"+club.id}>
                             <button>
                                 View Club
                             </button>

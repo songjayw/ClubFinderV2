@@ -57,7 +57,7 @@ const Post = ({post}) => {
                                 <span className="name"> {post.name} </span>
                             </Link>
                             <span> posted on </span>
-                            <Link to={`/club/${post.club_id}`} style={{textdecoration:"none", color:"inherit"}}>
+                            <Link to={`/clubProfile/${post.club_id}`} style={{textdecoration:"none", color:"inherit"}}>
                                 <span className="clubName"> {post.club_name} </span>
                             </Link>
 

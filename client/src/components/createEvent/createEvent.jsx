@@ -148,7 +148,7 @@ const CreateEvent = () => {
                                 type="file"
                                 id="image"
                                 name="image"
-                                onChange={handleChange}
+                                onChange={(e) => setFile(e.target.files[0])}
                                 className="choose-image"
                             />
                             

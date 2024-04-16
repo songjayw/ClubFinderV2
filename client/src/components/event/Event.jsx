@@ -1,9 +1,10 @@
 import "./event.scss";
 
+import moment from "moment";
+
 import FaceIcon from '@mui/icons-material/Face';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-
 
 const Event = ({ event }) => {
 
@@ -17,7 +18,7 @@ const Event = ({ event }) => {
 
                 <div className="image">
                     <div className="userInfo">
-                        <img src={event.image} alt=""/>
+                        <img src={"./upload/"+event.event_image} alt=""/>
                         <div className="details"></div>
                     </div>
                 </div>
@@ -30,7 +31,7 @@ const Event = ({ event }) => {
                         <span> <LocationOnIcon/> Location: {event.location} </span>
                     </div>
                     <div className="info-item">
-                        <span> <AccessTimeIcon/> Time: {event.time} </span>
+                        <span> <AccessTimeIcon /> Time: {moment(event.time).format('MMMM D | HH:mm')} </span>
                     </div>
 
                     <div className="participate-button">

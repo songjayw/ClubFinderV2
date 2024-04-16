@@ -10,7 +10,7 @@ const ClubProfile = () => {
     const [showMemberList, setShowMemberList] = useState(false);
     const [joinedClub, setJoinedClub] = useState(false); // Track whether the user has joined the club or not
     const [buttonClicked, setButtonClicked] = useState(false); // Track whether the button has been clicked or not
-
+    
     const handleEventsClick = () => {
         setShowEvents(true);
         setShowPosts(false);
