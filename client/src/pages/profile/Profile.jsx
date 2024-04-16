@@ -16,12 +16,8 @@ const Profile = () => {
         <div className="user-profile">
             <div className="inner-container-clubProfile">
                 <div className="user-Info">
-<<<<<<< HEAD
-                    <div className="images">
-=======
                     
                     <div className="images-profile">
->>>>>>> origin/finishFrontend
                         <img src="https://images.pexels.com/photos/13440765/pexels-photo-13440765.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" className="cover" />
 
                         <div className="profile-pic-div"> <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" alt="" className="profilePic" /></div>
