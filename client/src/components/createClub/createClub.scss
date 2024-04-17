@@ -37,6 +37,15 @@
                 border: 1px solid #b8b8b8;
                 resize: none;
             }
+            
+            input[type="number"],
+            textarea {
+                border-radius: 0px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                padding: 8px;
+                border: 1px solid #b8b8b8;
+                resize: none;
+            }
 
 
             select {

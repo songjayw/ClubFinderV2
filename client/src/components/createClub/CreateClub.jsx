@@ -118,10 +118,12 @@ const CreateClub = () => {
                         ></textarea>
 
                         <input
-                            type="text"
+                            type="number"
                             name="max_members"
-                            placeholder="Maximum Number of Participants (MAX : 90)"
-                            onChange={handleChange}
+                            placeholder="Maximum Participants (MAX : 90)"
+                            onChange={handleChange} 
+                            min="1"
+                            max="90"
                         />
 
                         <input

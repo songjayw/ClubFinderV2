@@ -29,6 +29,7 @@ import {
   Navigate,
 } from "react-router-dom";
 
+
 function App() {
   const {currentUser} = useContext(AuthContext);
   const queryClient = new QueryClient();
@@ -95,7 +96,7 @@ function App() {
         {
           path:"/createPost",
           element:<PostCreator/>
-          }, 
+        }, 
         {
           path:"/createClub",
           element:<ClubCreator/>

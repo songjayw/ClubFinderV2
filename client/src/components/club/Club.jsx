@@ -14,7 +14,7 @@ const Club = ({ club }) => {
 
                 <div className="image">
                     <div className="userInfo">
-                        <img src={"./upload/"+club.image } alt=""/>
+                        <img src={`http://localhost:3000/upload/${club.image}`} alt="" />
                         <div className="details">
 
                         </div>
@@ -28,9 +28,6 @@ const Club = ({ club }) => {
                                 View Club
                             </button>
                         </Link>
-                        
-                        
-                    
                 </div>
                 
             </div>
