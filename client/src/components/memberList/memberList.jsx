@@ -1,65 +1,25 @@
 import Member from "../member/Member"; 
 import "./memberList.scss";
 
+import { useLocation, Link } from "react-router-dom";
+import { useQuery, userQueryClient, useMutation, useQueryClient } from '@tanstack/react-query'
+import { makeRequest } from "../../axios";
+import { AuthContext } from "../../context/authContext";
 
-const MemberList = () => {
 
-    const memberList = [
-        {
-            id: 1,
-            userName: "John Smith",
-            image: "https://images.pexels.com/photos/46537/mexico-lake-man-wakeboard-46537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        }, 
-        {
-            id: 2,
-            userName: "Sophia Martinez",
-            image: "https://images.pexels.com/photos/46537/mexico-lake-man-wakeboard-46537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        }, 
-        {
-            id: 3,
-            userName: "Mateo Silva",
-            image: "https://images.pexels.com/photos/46537/mexico-lake-man-wakeboard-46537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        }, 
-        {
-            id: 4,
-            userName: "Grace Nkosi",
-            image: "https://images.pexels.com/photos/46537/mexico-lake-man-wakeboard-46537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        }, 
-        {
-            id: 5,
-            userName: "Aisha Diop",
-            image: "https://images.pexels.com/photos/46537/mexico-lake-man-wakeboard-46537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        }, 
-        {
-            id: 6,
-            userName: "Amelia Schmidt",
-            image: "https://images.pexels.com/photos/46537/mexico-lake-man-wakeboard-46537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        }, 
-        {
-            id: 7,
-            userName: "Fatima Nzomo",
-            image: "https://images.pexels.com/photos/46537/mexico-lake-man-wakeboard-46537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        }, 
-        {
-            id: 8,
-            userName: "Aria Chen",
-            image: "https://images.pexels.com/photos/46537/mexico-lake-man-wakeboard-46537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        }, 
-        {
-            id: 9,
-            userName: "Lucas Santos",
-            image: "https://images.pexels.com/photos/46537/mexico-lake-man-wakeboard-46537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        }, 
-        {
-            id: 10,
-            userName: "Noah Campbell",
-            image: "https://images.pexels.com/photos/46537/mexico-lake-man-wakeboard-46537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        }, 
-        
-    ]; 
+const MemberList = ({clubId}) => {
+
+    const { isLoading, error, data } = useQuery(["members", clubId], () =>
+        makeRequest.get(`/members/${clubId}`).then((res) => {
+            return res.data;
+        })
+    );
+
+    if (isLoading) return <div>Loading...</div>;
+    if (error) return <div> Error: {error.message}</div>;
 
     return <div className="memberList">
-        {memberList.map(member =>(
+        {data.map(member =>(
             <Member member={member} key={member.id}/>
         ))}
 

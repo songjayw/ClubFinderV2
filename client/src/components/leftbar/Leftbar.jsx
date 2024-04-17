@@ -33,7 +33,7 @@ const Leftbar = () => {
                 <div className="menu">
                     <div className="user">
                         <img 
-                            src={"./upload/"+currentUser.user_profile_image}
+                            src={"../upload/"+currentUser.user_profile_image}
                             alt=""
                         />  
                         <span className="userName"> <Link to={`/profile/${currentUser.username}`} className="link-name"> Jin Song </Link> </span>

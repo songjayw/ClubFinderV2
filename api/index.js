@@ -11,6 +11,7 @@ import categoryRoutes from "./routes/categories.js";
 import eventsRoutes from "./routes/events.js";
 import clubPosts from "./routes/clubposts.js";
 import imageRoutes from "./routes/images.js";
+import memberRoutes from "./routes/members.js";
 
 import cors from "cors";
 import cookieParser from "cookie-parser";
@@ -52,6 +53,7 @@ app.use("/api/categories", categoryRoutes);
 app.use("/api/events", eventsRoutes);
 app.use("/api/clubposts",clubPosts);
 app.use("/api/images", imageRoutes);
+app.use("/api/members", memberRoutes);
 
 app.listen(8800, () => {
     console.log("API working!");

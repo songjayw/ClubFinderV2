@@ -5,10 +5,9 @@ const Member = ({member}) => {
         <div className="member"> 
                 <div className="member-slot">
                     <div className= "imgProfile"><
-                        img src={member.image} alt=""/> 
+                        img src={"http://localhost:3000/upload/" + member.user_profile_image} alt=""/> 
                     </div>
-                    
-                    <span className="userName">{member.userName}</span>
+                    <span className="userName">{member.name}</span>
 
                     <button className= "Remove">
                         Remove
