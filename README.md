@@ -46,5 +46,10 @@ $ npm install
 $ npm add nodemon 
 $ yarn start
 
+Log in with 
+username: songjayw
+password: songjayw@123
+for pre-created clubs and data
+
 
 webapp address : http://localhost:3000
