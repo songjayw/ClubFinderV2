@@ -15,6 +15,19 @@ client/ (for frontend)
 Database Schema files are included in /schemas
 Run the sql files or import them using MySQL Workbench
 
+## Create db.js
+$ cd api
+$ create file `db.js`
+
+import mysql from "mysql";
+```
+export const db = mysql.createConnection({
+    host:"localhost",
+    user:"root",
+    password:"test@123",
+    database: "clubfinder"
+})
+```
 
 ## Running the Web App
 Import/Run them in the way you prefer (using MySQL Workbench)
