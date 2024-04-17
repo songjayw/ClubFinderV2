@@ -2,24 +2,36 @@
 
 Currently implemented front end partially bootstrapped with npx
 
+## Before you Begin
+All functionality is not complete - see list of implemented functionality and yet-to-be below
+
 ## How to Begin Testing
+There are 2 main directories :
+api/ (for backend)
+client/ (for frontend)
+
+
+## Setting up Database
+Database Schema files are included in /schemas
+Run the sql files or import them using MySQL Workbench
+
+
+## Running the Web App
+Import/Run them in the way you prefer (using MySQL Workbench)
 
 move to client directory
 
-$cd client
-$npm install *will install modules and packages needed for web app
-$npm start *will start the web app
+$ cd client
+$ npm install *will install modules and packages needed for web app
+$ yarn start
 
-## Currently Implemented Pages
-
-- '/' (home page example)
-- '/login' (login page)
-- '/register' (register page)
-- '/profile' (***currently working)
 
 Starting Backend Server
 
-$cd api
-$npm install
+$ cd api
+$ npm install
 $ npm add nodemon 
-$npm start
+$ yarn start
+
+
+webapp address : http://localhost:3000
