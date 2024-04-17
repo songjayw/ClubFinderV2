@@ -1,12 +1,12 @@
 import React from 'react';
 import './imageBlock.scss';
 
-const ImageGallery = ({ imageBlock }) => {
+const ImageBlock = ({ imageBlock }) => {
     return (
         <div className="image-blocks">
-            <img  src={imageBlock.image} alt=""/>
+            <img  src={"../upload/"+imageBlock.img} alt=""/>
         </div>
     );
 }
 
-export default ImageGallery;
+export default ImageBlock;

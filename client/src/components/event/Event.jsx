@@ -18,7 +18,7 @@ const Event = ({ event }) => {
 
                 <div className="image">
                     <div className="userInfo">
-                        <img src={"./upload/"+event.event_image} alt=""/>
+                        <img src={`http://localhost:3000/upload/${event.event_image}`} alt=""/>
                         <div className="details"></div>
                     </div>
                 </div>

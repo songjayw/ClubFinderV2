@@ -1,4 +1,4 @@
-import "./post.scss";
+import "./clubPost.scss";
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import FlagOutlinedIcon from '@mui/icons-material/FlagOutlined';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -16,7 +16,7 @@ import moment from "moment";
 
 import Comments from "../comments/Comments"
 
-const Post = ({post}) => {
+const ClubPost = ({post}) => {
 
     const [commentOpen, setCommentOpen] = useState(false);
 
@@ -53,7 +53,7 @@ const Post = ({post}) => {
                 <div className="user">
                     <div className="userInfo">
                         <div className="details">
-                            <img src={"./upload/" + post.user_profile_image} alt=""/>
+                            <img src={"../upload/" + post.user_profile_image} alt=""/>
 
                             <div className="header">
                                 <Link to={`/profile/${post.username}`} style={{textdecoration:"none", color:"inherit"}}> 
@@ -64,9 +64,7 @@ const Post = ({post}) => {
                                 <Link to={`/clubProfile/${post.club_id}`} style={{textdecoration:"none", color:"inherit"}}>
                                 <span className="clubName"> {post.club_name} </span>
                                 </Link>
-
                             </div>
-
                         </div>
                         <span className="date"> {moment(post.time_created).fromNow()} </span>
                     </div>
@@ -105,4 +103,4 @@ const Post = ({post}) => {
     )
 };
 
-export default Post;
+export default ClubPost;

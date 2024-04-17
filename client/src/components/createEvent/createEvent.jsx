@@ -66,9 +66,7 @@ const CreateEvent = () => {
                 if (imgUrl) {
                     const payload = {
                         ...inputs,
-                        event_image: imgUrl, 
-
-                        // changed this from img to event_img
+                        img: imgUrl, 
                     };
 
                     try {

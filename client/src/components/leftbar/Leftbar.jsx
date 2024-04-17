@@ -1,5 +1,6 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../context/authContext";
+import axios from "axios";
 import "./leftbar.scss";
 import { Link } from 'react-router-dom';
 import { 
@@ -13,7 +14,18 @@ import {
 import SensorDoorIcon from '@mui/icons-material/SensorDoor';
 
 const Leftbar = () => {
-    const { currentUser } = useContext(AuthContext);
+    const [isEditing, setIsEditing] = useState(false);
+    const [ userInfo, setUserInfo ] = useState({});
+    const [ error, setError ] = useState(null);
+    const {currentUser } = useContext(AuthContext);
+
+    useEffect(() => {
+        axios.get(`http://localhost:8800/api/users/find/${currentUser.username}`)
+            .then(response => setUserInfo(response.data[0]))
+            .catch(error => setError("Failed to fetch user info"));
+    }, []);
+
+    console.log(currentUser.username)
     
     return (
         <div className="leftbar">
@@ -21,10 +33,10 @@ const Leftbar = () => {
                 <div className="menu">
                     <div className="user">
                         <img 
-                            src="https://images.pexels.com/photos/20339251/pexels-photo-20339251.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            src={"./upload/"+currentUser.user_profile_image}
                             alt=""
                         />  
-                        <span className="userName"> <Link to="/profile" cclasssName="link-name"> Jin Song </Link> </span>
+                        <span className="userName"> <Link to={`/profile/${currentUser.username}`} className="link-name"> Jin Song </Link> </span>
                     </div>
                     <hr/>
                     

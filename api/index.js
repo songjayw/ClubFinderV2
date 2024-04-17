@@ -9,6 +9,8 @@ import likeRoutes from "./routes/likes.js";
 import clubRoutes from "./routes/clubs.js";
 import categoryRoutes from "./routes/categories.js";
 import eventsRoutes from "./routes/events.js";
+import clubPosts from "./routes/clubposts.js";
+import imageRoutes from "./routes/images.js";
 
 import cors from "cors";
 import cookieParser from "cookie-parser";
@@ -48,6 +50,8 @@ app.use("/api/likes", likeRoutes);
 app.use("/api/clubs", clubRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/events", eventsRoutes);
+app.use("/api/clubposts",clubPosts);
+app.use("/api/images", imageRoutes);
 
 app.listen(8800, () => {
     console.log("API working!");

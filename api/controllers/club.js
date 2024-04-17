@@ -22,6 +22,27 @@ export const getMyClubs = (req, res) => {
     }); 
 }
 
+export const getClub = (req,res) => {
+    const clubId = req.params.clubId;
+    const q = `
+        SELECT 
+        clubs.*, 
+        categories.name AS category_name
+    FROM 
+        clubs
+    JOIN 
+        categories 
+    ON 
+        clubs.clubCategory = categories.id
+    WHERE 
+        clubs.id = ?`
+
+    db.query(q, [clubId], (err,data) => {
+        if (err) return res.status(500).json(err);
+        return res.json(data);
+    });
+}
+
 export const getUserClubs = (req,res) => {
     const userIdC = req.params.userIdC;
     const q = `

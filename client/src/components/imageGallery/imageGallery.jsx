@@ -2,39 +2,30 @@ import React from 'react';
 import ImageBlock from '../imageBlock/ImageBlock';
 import "./imageGallery.scss"
 
-const imageGallery = [
+import { useLocation, Link } from "react-router-dom";
+import { useQuery, userQueryClient, useMutation, useQueryClient } from '@tanstack/react-query'
+import { makeRequest } from "../../axios";
+import { AuthContext } from "../../context/authContext";
 
-    {
-        image:'https://images.pexels.com/photos/1855418/pexels-photo-1855418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    },
-    {
-        image:'https://images.pexels.com/photos/1076081/pexels-photo-1076081.jpeg?auto=compress&cs=tinysrgb&w=600'
-    },
 
-    {
-        image:'https://images.pexels.com/photos/2301172/pexels-photo-2301172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    },
-    {
-        image:'https://images.pexels.com/photos/2421764/pexels-photo-2421764.jpeg',
-    },
-    {
-        image:'https://images.pexels.com/photos/957039/hut-alpine-mountains-bavaria-957039.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    },
-    {
-        image:'https://images.pexels.com/photos/2398220/pexels-photo-2398220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    },
+const ImageGallery = ({clubId}) => {
     
-    
-    
-    
-    // Add more image URLs as needed
-];
 
-const ImageGallery = () => {
+    const { isLoading, error, data } = useQuery(["images", clubId], () =>
+        makeRequest.get(`/images/${clubId}`).then((res) => {
+            return res.data;
+        })
+    );
+
+    if (isLoading) return <div>Loading...</div>;
+    if (error) return <div> Error: {error.message}</div>;
+
+    console.log(data.img);
+
     return (
         <div className="image-gallery-container">
-            {imageGallery.map((imageBlock, index) => (
-                <div className="image-gallery" key={index}>
+            {data.map((imageBlock) => (
+                <div key={imageBlock.id} className="image-gallery">
                     <ImageBlock imageBlock={imageBlock} />
                 </div>
             ))}
