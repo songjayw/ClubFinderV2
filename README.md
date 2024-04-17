@@ -24,7 +24,7 @@ import mysql from "mysql";
 export const db = mysql.createConnection({
     host:"localhost",
     user:"root",
-    password:"test@123",
+    password:"test@123", // Replace with your MySQL password here
     database: "clubfinder"
 })
 ```
